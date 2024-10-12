@@ -1,3 +1,3 @@
 const possibleGender = ['female', 'male'];
 
-module.exports = {possibleGender}
+module.exports = {possibleGender};

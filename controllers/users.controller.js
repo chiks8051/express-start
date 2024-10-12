@@ -1,5 +1,7 @@
 const userJson = require('../user.json');
 
+const { searchUserValidation } = require('../validation/user.validator');
+
 
 const getUser = (req, res) => {
     res.send(userJson.data);
@@ -15,15 +17,13 @@ const getUserLogin = (req, res) => {
 
 const getUserBySearch = (req, res) => {
     const { gender, age } = req.query;
-    if (gender && !possibleGender.includes(gender)) {
-        return res.status(422).send({ message: `Gender to search can either be 'male' or 'female'` })
+    const { error } = searchUserValidation.validate({ gender, age });
+
+    if (error) {
+        res.status(400).send({ message: error.details[0].message });
     }
 
-    if ((age && isNaN(age)) || Number(age) < 0 || Number(age) > 100) {
-        return res.status(400).send({ message: "Invalid age, Please enter age between 1 to 100" })
-    }
-
-    if (gender && age) {
+    else if (gender && age) {
         res.send(userJson.data.filter((user) => user.gender === gender && user.dob.age === parseInt(age)))
     } else if (gender) {
         res.send(userJson.data.filter((user) => user.gender === gender));

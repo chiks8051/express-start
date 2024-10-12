@@ -14,4 +14,4 @@ GET http://localhost:8081/users/search?gender=male&&age=49
 ###
 GET http://localhost:8081/users/search?gender=malee
 ###
-GET http://localhost:8081/users/search?age=49
+GET http://localhost:8081/users/search?age=male
