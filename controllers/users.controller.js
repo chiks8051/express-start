@@ -4,8 +4,11 @@ const { searchUserValidation } = require('../validation/user.validator');
 
 
 const getUser = (req, res) => {
+    console.log(process.env.PASSWORD)
+    if (req.headers.authorization !== process.env.PASSWORD)
+      return res.status(401).send({ message: "Unauthorized" });
     res.send(userJson.data);
-}
+  };
 
 
 const getUserLogin = (req, res) => {
