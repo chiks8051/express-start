@@ -1,0 +1,17 @@
+GET http://localhost:8081/
+###
+GET http://localhost:8081/currencies
+###
+GET http://localhost:8081/currencies/usd
+###
+GET http://localhost:8081/currencies?min_value=1
+###
+GET http://localhost:8081/users
+###
+GET http://localhost:8081/users/0465ee2d-1897-42ad-bd8b-9406b675067a
+###
+GET http://localhost:8081/users/search?gender=male&&age=49
+###
+GET http://localhost:8081/users/search?gender=malee
+###
+GET http://localhost:8081/users/search?age=49
