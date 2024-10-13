@@ -5,8 +5,6 @@ getCurrency = (req, res) => {
     const reqCurrency = currencyJson.data.filter((curr) => curr.min_size === req.query.min_value);
     if (req.query.min_value)
         return res.send(reqCurrency);
-
-    
     res.send(currencyJson.data);
 };
 

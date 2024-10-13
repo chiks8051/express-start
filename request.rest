@@ -10,8 +10,10 @@ GET http://localhost:8081/users
 Authorization: LetMeIn
 ###
 GET http://localhost:8081/users/0465ee2d-1897-42ad-bd8b-9406b675067a
+Authorization: LetMeIn
 ###
 GET http://localhost:8081/users/search?gender=male&&age=49
+Authorization: LetMeIn
 ###
 GET http://localhost:8081/users/search?gender=malee
 ###
